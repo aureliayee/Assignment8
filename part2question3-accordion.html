@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Accordion</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <style>
+        body {font-family: 'Roboto', sans-serif; border: solid 1px black; width: 75%;}
+        li {list-style-type: none; display: block; width: 95%;}
+        a {text-decoration: none; background-color: #009999; display: block; width: 100%; height: 30px; border-radius: 10px; padding-top: 10px; padding-left: 10px; color: white; margin-bottom: 10px; font-weight: bold;}
+        li p {padding-left: 10px;}
+        span {background-color: #006060; display: inline-block; width: 22px; height: 22px; text-align: center; border-radius: 50px;}
+    </style>
+    <script>
+        $(document).ready(function() {
+            $("p").hide();
+            $("p:first").show();
+            $("span:first").replaceWith ("<span style='background-color:#4A6E00'>-</span>")
+            $("a:first").css("background-color", "#669900")
+                        .css("border-radius","10px 10px 0 0");
+            $("li").each(function() {
+                $(this).find("a").on("click", function() {
+                    $("p").hide(300);
+                    $("li span").replaceWith ("<span style='background-color: #006060'>+</span>");
+                    $("a").css("background-color", "#009999")
+                          .css("border-radius", "10px");
+                    $(this).addClass("active");
+                    $(this.hash).fadeIn();
+                    $(this).css("background-color", "#669900")
+                           .css("border-radius", "10px 10px 0 0");
+                    $(this).children("span").replaceWith("<span style='background-color:#4A6E00'>-</span>");
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+     <ul>
+         <li><a href="#tab1txt"><span>+</span> Tab1</a>
+             <p id="tab1txt">Text1</p></li>
+         <li><a href="#tab2txt"><span>+</span> Tab2</a>
+             <p id="tab2txt">Text2</p></li>
+         <li><a href="#tab3txt"><span>+</span> Tab3</a>
+             <p id="tab3txt">Text3</p></li>
+      </ul>    
+</body>
+</html>

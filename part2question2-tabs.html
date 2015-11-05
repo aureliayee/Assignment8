@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tabs</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <style>
+        body {font-family: 'Roboto', sans-serif; border: solid 1px black;}
+        ul {list-style-type: none; height: 30px; background-color: lightgrey; border-radius: 5px; margin-bottom: 0; padding-top: 5px; padding-left: 0; margin: 15px 5px;}
+        li {display: inline;}
+        section {padding: 30px;}
+        a {float: left; text-decoration: none; color: black; width: 200px; background-color: #F2F2F2; height: 25px; text-align: center; padding: 5px 0 0 0 ; margin-left: 5px; border-radius: 5px 5px 0 0 ;}
+    </style>
+    <script>
+        $(document).ready(function() {
+            $("p").hide();
+            $(".activetxt").show();
+            $("a:first").css("background-color", "#FFFFFF");
+            $("a").each(function() {
+                $(this).on("click", function() {
+                    $(".activetxt").hide()
+                                   .removeClass();
+                    $("a").css("background-color", "#F2F2F2");
+                    $(this.hash).show()
+                                .addClass("activetxt");
+                    $(this).css("background-color", "white");
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+     <ul>
+         <li><a href="#tab1txt">Horse</a></li>
+         <li><a href="#tab2txt">Dog</a></li>
+         <li><a href="#tab3txt">Cat</a></li>
+      </ul>
+      <section>
+           <p class="activetxt" id="tab1txt">The horse is one of two extant subspecies of Equus ferus. It is an odd-toed ungulate mammal belonging to the taxonomic family Equidae. The horse has evolved over the past 45 to 55 million years from a small multi-toed creature, Hyracotherium, into the large, single-toed animal of today. Humans began to domesticate horses around 4000 BC, and their domestication is believed to have been widespread by 3000 BC. Horses in the subspecies caballus are domesticated, although some domesticated populations live in the wild as feral horses. These feral populations are not true wild horses, as this term is used to describe horses that have never been domesticated, such as the endangered Przewalski's horse, a separate subspecies, and the only remaining true wild horse. There is an extensive, specialized vocabulary used to describe equine-related concepts, covering everything from anatomy to life stages, size, colors, markings, breeds, locomotion, and behavior.<br><br>
+
+Horses' anatomy enables them to make use of speed to escape predators and they have a well-developed sense of balance and a strong fight-or-flight response. Related to this need to flee from predators in the wild is an unusual trait: horses are able to sleep both standing up and lying down. Female horses, called mares, carry their young for approximately 11 months, and a young horse, called a foal, can stand and run shortly following birth. Most domesticated horses begin training under saddle or in harness between the ages of two and four. They reach full adult development by age five, and have an average lifespan of between 25 and 30 years.</p>
+           <p id="tab2txt">The domestic dog is a domesticated canid which has been selectively bred for millennia for various behaviors, sensory capabilities, and physical attributes.<br><br>
+
+Although initially thought to have originated as a manmade variant of an extant canid species (variously supposed as being the dhole, golden jackal, or gray wolf), extensive genetic studies undertaken during the 2010s indicate that dogs diverged from an extinct wolf-like canid in Eurasia 40,000 years ago. Being the oldest domesticated animals, their long association with people has allowed dogs to be uniquely attuned to human behavior, as well as thrive on a starch-rich diet which would be inadequate for other canid species.<br><br>
+
+Dogs perform many roles for people, such as hunting, herding, pulling loads, protection, assisting police and military, companionship, and, more recently, aiding handicapped individuals. This impact on human society has given them the nickname "man's best friend" in the Western world. In some cultures, however, dogs are a source of meat</p>
+           <p id="tab3txt">The domestic cat is a small, usually furry, domesticated, and carnivorous mammal. They are often called housecats when kept as indoor pets or simply cats when there is no need to distinguish them from other felids and felines. Cats are often valued by humans for companionship and their ability to hunt vermin.<br><br>
+
+Cats are similar in anatomy to the other felids, with strong, flexible bodies, quick reflexes, sharp retractable claws, and teeth adapted to killing small prey. Cat senses fit a crepuscular and predatory ecological niche. Cats can hear sounds too faint or too high in frequency for human ears, such as those made by mice and other small animals. They can see in near darkness. Like most other mammals, cats have poorer color vision and a better sense of smell than humans.<br><br>
+
+Despite being solitary hunters, cats are a social species and cat communication includes the use of a variety of vocalizations (mewing, purring, trilling, hissing, growling, and grunting), as well as cat pheromones and types of cat-specific body language.<br><br>
+
+Cats have a high breeding rate. Under controlled breeding, they can be bred and shown as registered pedigree pets, a hobby known as cat fancy. Failure to control the breeding of pet cats by neutering and the abandonment of former household pets has resulted in large numbers of feral cats worldwide, requiring population control. This has contributed, along with habitat destruction and other factors, to extinction of many bird species. Cats have been known to extirpate a bird species within a specific region and may have contributed to extinction of isolated island populations. Cats are thought to be primarily, though not solely, responsible for the extinction of 33 species of birds, and the presence of feral and free ranging cats makes some locations unsuitable for attempted species reestablishment in otherwise suitable locations</p>
+       </section>
+    
+</body>
+</html>

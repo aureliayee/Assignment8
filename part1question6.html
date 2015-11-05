@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment 8</title>
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script>
+        $(document).ready(function() {
+//6.	Rewrite the code from number 5. This time add a span tag to the web page. Display three different messages within the span tag when the user enters the div, leaves the div, or clicks on the div.
+            $("div").css("width", "400px") 
+                    .css("height", "400px")
+                    .css("background-color", "pink");
+            $("div").on({
+                mouseenter: function() {$("span").text("Hovered over the div!");},
+                mouseleave: function() {$("span").text("The mouse left the div!");},
+                click: function() {$("span").text("You clicked on the div!");}
+            });
+        });
+
+
+    </script>
+</head>
+<body>
+    <div><p>Click Me!</p></div>
+    <span></span>
+</body>
+</html>

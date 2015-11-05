@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Slider</title>
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <style>
+        img {width: 500px; height: 300px; position: absolute; padding: 0 25px;}
+        section {border: solid 20px #F2F2F2; text-align: center; width: 550px; position: relative; height: 300px;}
+        a {text-decoration: none; color: lightblue; font-size: 1.5em; padding-left: 10px;}
+    </style>
+    <script>
+        $(document).ready(function() {
+            $("img").hide();
+            $(".active").show();
+            $("a:first").css("color", "darkblue");
+            $("a").on({
+                mouseenter: function(e) {$(this).css("text-decoration", "underline");},
+                mouseleave: function(e) {$(this).css("text-decoration", "none");}
+            });
+            $("a").each(function() {
+                $(this).on("click", function() {
+                    $(".active").fadeOut(1000)
+                                .removeClass();
+                    $(this.hash).fadeIn(1000)
+                                .addClass("active");
+                    $("a").css("color", "lightblue");
+                    $(this).css("color", "darkblue"); 
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+   <section>
+       <img src = "images/bunnies.jpg" id="bunnies" class="active">
+       <img src = "images/cats.jpg" id="cats">
+       <img src = "images/deer.jpg" id="deer">
+       <img src = "images/puppies.jpg" id="puppies">
+       <img src = "images/horses.jpg" id="horses">
+   </section>
+   <div><p>
+   <a href="#bunnies">01</a>
+   <a href="#cats">02</a>
+   <a href="#deer">03</a>
+   <a href="#puppies">04</a>
+   <a href="#horses">05</a></p></div>
+    
+</body>
+</html>

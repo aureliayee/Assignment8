@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment 8</title>
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            
+//4.	Create two buttons on a web page. Attach the click event to both buttons using a single handler using the .on() method. Again, an alert message should be displayed to the user indicating that a button has been clicked when either of the buttons are actually clicked. 
+            $("button").on("click", function(e) {
+                window.alert("The button has been clicked.");
+            })
+
+        });
+    </script>
+</head>
+<body>
+   <button id="btn1">Button 1</button>
+   <button id="btn2">Button 2</button>
+</body>
+</html>
